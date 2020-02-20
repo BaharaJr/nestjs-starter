@@ -1,5 +1,5 @@
 export interface Task {
-    id: bigint;
+    id: string;
     title: string;
     description: string;
     status: TaskStatus;
