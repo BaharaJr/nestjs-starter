@@ -20,7 +20,7 @@ import { TaskStatusValidation } from './pipes/task-status.validation.pipe';
 export class TasksController {
   constructor(private taskService: TasksService) {}
   @Get()
-  getTasks(@Query() filterTask: TasksFilterDto): Task[] {
+  getTasks(@Query(ValidationPipe) filterTask: TasksFilterDto): Task[] {
     if (Object.keys(filterTask).length) {
       return this.taskService.getFilteredTask(filterTask);
     } else return this.taskService.getAllTasks();
