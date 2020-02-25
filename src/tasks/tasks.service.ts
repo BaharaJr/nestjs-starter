@@ -14,27 +14,25 @@ export class TasksService {
 
   getFilteredTask(tasksfilter: TasksFilterDto) {
     const { status, search } = tasksfilter;
-    let taskz = this.getAllTasks();
+    let tasks = this.getAllTasks();
 
     if (status) {
-      taskz = taskz.filter(task => task.status === status);
+      tasks = tasks.filter(task => task.status === status);
     }
     if (search) {
-      taskz = taskz.filter(
+      tasks = tasks.filter(
         task =>
           task.title.includes(search) || task.description.includes(search),
       );
     }
 
-    return taskz;
+    return tasks;
   }
   getTaskById(id: string): Task {
     const found = this.tasks.find(task => task.id === id);
-    if(!found){
-      throw new NotFoundException
-    }
-    else
-    return found;
+    if (!found) {
+      throw new NotFoundException();
+    } else return found;
   }
 
   createTasks(createTask: CreateTask) {
@@ -51,7 +49,8 @@ export class TasksService {
   }
 
   deleteOneTask(id: string): void {
-    this.tasks = this.tasks.filter(task => task.id !== id);
+    let found = this.getTaskById(id);
+    this.tasks = this.tasks.filter(task => task.id !== found.id);
   }
 
   updateTaskStatus(id: string, status: TaskStatus): Task {
