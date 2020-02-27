@@ -41,7 +41,7 @@ $ npm run test:cov
 ## Branch Descriptions
 > Every branch is simplified to make the learning easier and it's self described
 ```bash
-> The most branch contains the most recent or full api
+The most branch contains the most recent or full api
 ```
 ## License
 
