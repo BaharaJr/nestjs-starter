@@ -7,6 +7,7 @@
 ```bash
 A nestjs simpler starter project with implemented endpoints so minimalist for anyone to understand
 ```
+> Built with Nestjs, Typeorm and Postgresql
 ## Installation
 
 ```bash
