@@ -28,16 +28,16 @@ export class TasksController {
   // }
 
   @Get('/:id')
-   getTaskById(@Param('id') id: string): Promise<Task> {
+   getTaskById(@Param('id') id: number): Promise<Task> {
     return this.taskService.getTaskById(id);
   }
 
-  // @Post()
-  // @UsePipes(ValidationPipe)
-  // createTask(@Body() createTask: CreateTask): Task {
-  //   console.log(createTask);
-  //   return this.taskService.createTasks(createTask);
-  // }
+  @Post()
+  @UsePipes(ValidationPipe)
+  createTask(@Body() createTask: CreateTask): Promise<Task> {
+    console.log(createTask);
+    return this.taskService.createTasks(createTask);
+  }
 
   // @Delete('/:id')
   // deleteOneTask(@Param('id') id: string) {

@@ -34,7 +34,7 @@ export class TasksService {
 
   //   return tasks;
   // }
-  async getTaskById(id: string): Promise<Task> {
+  async getTaskById(id: number): Promise<Task> {
     let found = await this.taskRepository.findOne(id);
     if (!found) {
       throw new NotFoundException(`Task with ID ${id} not found`);
@@ -47,6 +47,17 @@ export class TasksService {
   //     throw new NotFoundException();
   //   } else return found;
   // }
+
+  async createTasks(createTask: CreateTask): Promise<Task> {
+    const { title, description } = createTask;
+    const task = new Task();
+    task.title = title;
+    task.description = description;
+    task.status = TaskStatus.OPEN;
+    task.uid = uid();
+    await task.save();
+    return task;
+  }
 
   // createTasks(createTask: CreateTask) {
   //   const { title, description } = createTask;
