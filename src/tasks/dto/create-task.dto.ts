@@ -1,5 +1,5 @@
 import {IsNotEmpty} from 'class-validator'
-export class CreateTask{
+export class CreateTaskDto{
 @IsNotEmpty()
 title: string;
 
