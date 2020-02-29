@@ -12,7 +12,7 @@ import {
 } from '@nestjs/common';
 import { TasksService } from './tasks.service';
 import { TaskStatus } from './tasks.status-enum';
-import { CreateTask } from './dto/create-task.dto';
+import { CreateTaskDto } from './dto/create-task.dto';
 import { TasksFilterDto } from './dto/tasksfilter.dto';
 import { TaskStatusValidation } from './pipes/task-status.validation.pipe';
 import { Task } from './task.entity';
@@ -34,9 +34,9 @@ export class TasksController {
 
   @Post()
   @UsePipes(ValidationPipe)
-  createTask(@Body() createTask: CreateTask): Promise<Task> {
-    console.log(createTask);
-    return this.taskService.createTasks(createTask);
+  createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
+    console.log(createTaskDto);
+    return this.taskService.createTasks(createTaskDto);
   }
 
   // @Delete('/:id')
