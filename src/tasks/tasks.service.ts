@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  BadRequestException,
+} from '@nestjs/common';
 import { TaskStatus } from './tasks.status-enum';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { TasksFilterDto } from './dto/tasksfilter.dto';
@@ -48,7 +52,7 @@ export class TasksService {
   // }
 
   async createTasks(createTaskDto: CreateTaskDto): Promise<Task> {
-    return await this.taskRepository.createTask(createTaskDto)
+    return await this.taskRepository.createTask(createTaskDto);
   }
 
   // createTasks(createTask: CreateTask) {
@@ -64,10 +68,20 @@ export class TasksService {
   //   return task;
   // }
 
-  // deleteOneTask(id: string): void {
-  //   let found = this.getTaskById(id);
-  //   this.tasks = this.tasks.filter(task => task.id !== found.id);
-  // }
+  async deleteOneTask(id: number): Promise<any> {
+    let found = await this.taskRepository.delete(id);
+    if (found.affected === 0) {
+      throw new NotFoundException(`Can not delete task with ID ${id} `);
+    }
+    return found;
+  }
+
+  async updateTaskStatus(id: number, status: TaskStatus): Promise<Task> {
+    let task = await this.getTaskById(id);
+    task.status = status;
+    await task.save();
+    return task;
+  }
 
   // updateTaskStatus(id: string, status: TaskStatus): Task {
   //   let task = this.getTaskById(id);
