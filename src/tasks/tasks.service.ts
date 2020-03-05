@@ -25,7 +25,7 @@ export class TasksService {
       query.andWhere('task.status=:status', {status})
     }
     if(search){
-      
+      query.andWhere('(task.title LIKE :search OR task.description LIKE :search)', {search: `%${search}%`})
     }
     let tasks = query.getMany();
     return tasks;
