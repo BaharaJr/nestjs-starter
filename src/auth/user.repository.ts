@@ -5,7 +5,7 @@ import * as uid from 'uid';
 
 @EntityRepository(UserProfile)
 export class UserRepository extends Repository<UserProfile> {
-  async signUp(authDto: AuthDto): Promise<UserProfile> {
+  async signUp(authDto: AuthDto): Promise<void> {
     const { password, username, firstname, lastname } = authDto;
     const user = new UserProfile();
     user.username = username;
@@ -14,6 +14,5 @@ export class UserRepository extends Repository<UserProfile> {
     user.lastname = lastname
     user.uid = uid();
     user.save();
-    return user;
   }
 }
