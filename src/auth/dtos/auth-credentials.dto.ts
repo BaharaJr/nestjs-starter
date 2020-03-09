@@ -7,8 +7,9 @@ export class AuthDto {
     @MaxLength(30)
     username: string;
 
-    @MinLength(8)
+    @MinLength(4)
     @MaxLength(30)
+    @IsNotEmpty()
     password: string;
     lastname: string;
     firstname: string;
