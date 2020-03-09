@@ -9,7 +9,7 @@ export const typeormConfig: TypeOrmModuleOptions = {
   synchronize: true,
   logging: false,
   dropSchema: true,
-  entities: ['src/tasks/**/*.entity.ts'],
+  entities: [__dirname + '/../**/*.entity.ts'],
   migrations: ['src/database/migration/**/*.ts'],
   subscribers: ['src/subscriber/**/*.ts'],
 };
