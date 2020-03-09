@@ -9,7 +9,7 @@ import { TasksFilterDto } from './dto/tasksfilter.dto';
 import { TaskRepository } from './task.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Task } from './task.entity';
-import { createQueryBuilder, EntityRepository } from 'typeorm';
+import { EntityRepository } from 'typeorm';
 
 @EntityRepository(Task)
 export class TasksService {
@@ -18,14 +18,17 @@ export class TasksService {
     private taskRepository: TaskRepository,
   ) {}
 
- async getAllTasks(tasksFilterDto: TasksFilterDto): Promise<any> {
-    const {status, search} = tasksFilterDto;
-    const query = this.taskRepository.createQueryBuilder('task')
-    if(status){
-      query.andWhere('task.status=:status', {status})
+  async getAllTasks(tasksFilterDto: TasksFilterDto): Promise<any> {
+    const { status, search } = tasksFilterDto;
+    const query = this.taskRepository.createQueryBuilder('task');
+    if (status) {
+      query.andWhere('task.status=:status', { status });
     }
-    if(search){
-      query.andWhere('(task.title LIKE :search OR task.description LIKE :search)', {search: `%${search}%`})
+    if (search) {
+      query.andWhere(
+        '(task.title LIKE :search OR task.description LIKE :search)',
+        { search: `%${search}%` },
+      );
     }
     let tasks = query.getMany();
     return tasks;
