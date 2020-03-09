@@ -34,7 +34,6 @@ export class TasksController {
   @Post()
   @UsePipes(ValidationPipe)
   createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
-    console.log(createTaskDto);
     return this.taskService.createTasks(createTaskDto);
   }
 

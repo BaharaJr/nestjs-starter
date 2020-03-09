@@ -9,7 +9,7 @@ export class AuthService {
     @InjectRepository(UserRepository)
     private userRepository: UserRepository,
   ) {}
-  async signup(authDto: AuthDto): Promise<User> {
-    return this.userRepository.create(authDto);
+  async register(authDto: AuthDto): Promise<User> {
+    return this.userRepository.register(authDto);
   }
 }
