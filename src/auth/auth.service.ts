@@ -12,4 +12,8 @@ export class AuthService {
   async register(authDto: AuthDto): Promise<User> {
     return this.userRepository.register(authDto);
   }
+  async login(authDto: AuthDto) {
+    let user = await this.userRepository.validateUserPassword(authDto);
+    return user;
+  }
 }
