@@ -3,7 +3,7 @@ import { UserRepository } from './user.repository';
 import { EntityRepository } from 'typeorm';
 import { User } from './user.entity';
 import { AuthDto } from './dtos/auth-credentials.dto';
-import { ForbiddenException, UnauthorizedException } from '@nestjs/common';
+import { UnauthorizedException } from '@nestjs/common';
 @EntityRepository(User)
 export class AuthService {
   constructor(
@@ -15,8 +15,8 @@ export class AuthService {
   }
   async login(authDto: AuthDto) {
     let user = await this.userRepository.validateUserPassword(authDto);
-    if(!user){
-      throw new UnauthorizedException('Invalid access credentials')
+    if (!user) {
+      throw new UnauthorizedException('Invalid access credentials');
     }
   }
 }
