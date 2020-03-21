@@ -23,6 +23,8 @@
   "dependencies": {
     "@nestjs/common": "^6.11.11",
     "@nestjs/core": "^6.11.11",
+    "@nestjs/jwt": "^7.0.0",
+    "@nestjs/passport": "^7.0.0",
     "@nestjs/platform-express": "^6.11.11",
     "@nestjs/typeorm": "^6.3.4",
     "bcrypt": "^4.0.1",
@@ -30,6 +32,8 @@
     "class-validator": "^0.11.1",
     "eslint-plugin-nestjs": "^1.2.3",
     "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "pg": "^7.18.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
