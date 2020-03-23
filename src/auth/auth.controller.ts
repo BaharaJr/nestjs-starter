@@ -15,7 +15,7 @@ export class AuthController {
 
   @Post('/register')
   @UsePipes(ValidationPipe)
-  async register(@Body() authDto: AuthDto): Promise<User> {
+  async register(@Body() authDto: AuthDto): Promise<{accessToken: string}> {
     return await this.authService.register(authDto);
   }
   @Post('/login')
