@@ -5,7 +5,7 @@ import { User } from './user.entity';
 import { AuthDto } from './dtos/auth-credentials.dto';
 import { UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { JwtPayload } from './jtwpayload.enum';
+import { JwtPayload } from './jtwpayload';
 @EntityRepository(User)
 export class AuthService {
   constructor(
