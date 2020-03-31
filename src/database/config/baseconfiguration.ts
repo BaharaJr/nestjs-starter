@@ -3,6 +3,7 @@ let pathFolder = process.env.HRIS_HOME;
 if (!pathFolder) {
   if (!fs.existsSync('./files')) {
     fs.mkdirSync('./files');
+    fs.mkdirSync('./files/temp')
   }
   if (!fs.existsSync('./files/config.json')) {
     fs.writeFileSync('./files/config.json', fs.readFileSync('./config.example.json'));
@@ -16,13 +17,6 @@ const config = JSON.parse(
 export function getDataBaseConfiguration() {
   return {
     ...config.database,
-
-    // synchronize: false,
-    // migrationsRun: true,
-
-    // synchronize: true,
-    // migrationsRun: false,
-    // database: 'hris4_new',
     entities: ['src/**/*.entity{.ts,.js}'],
     migrations: ['src/database/migration/*.ts'],
   };
@@ -32,12 +26,9 @@ export function getConfiguration() {
   if (!config.port) {
     config.port = 3000;
   }
-  
+
   if (!files.temp) {
     files.temp = pathFolder + '/' + 'temp';
-  }
-  if (!fs.existsSync(files.apps)) {
-    fs.mkdirSync(files.apps);
   }
   if (!fs.existsSync(files.temp)) {
     fs.mkdirSync(files.temp);

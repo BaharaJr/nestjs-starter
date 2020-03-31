@@ -1,22 +1,42 @@
 [
-    {
-      "name": "development",
-      "type": "postgres",
-      "host": "localhost",
-      "port": 5432,
-      "username": "postgres",
-      "password": "postgres",
-      "database": "tasks",
-      "synchronize": false,
-      "logging": false,
-      "dropSchema": true,
-      "entities": ["src/**/*.entity.ts"],
-      "migrations": ["src/database/migration/**/*.ts"],
-      "subscribers": ["src/subscriber/**/*.ts"],
-      "cli": {
-        "migrationsDir": "src/database/migration",
-        "subscribersDir": "src/subscriber"
-      }
+  {
+    "name": "development",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "tasks",
+    "synchronize": false,
+    "logging": false,
+    "dropSchema": true,
+    "entities": ["src/**/*.entity.ts"],
+    "migrations": ["src/database/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/modules/entities",
+      "migrationsDir": "src/database/migration",
+      "subscribersDir": "src/subscriber"
     }
-  ]
-  
+  },
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "tasks",
+    "synchronize": false,
+    "logging": false,
+    "dropSchema": true,
+    "entities": ["src/**/*.entity.ts"],
+    "migrations": ["src/database/migration/**/*.ts"],
+    "subscribers": ["src/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/modules/entities",
+      "migrationsDir": "src/database/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  }
+]
