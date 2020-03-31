@@ -1,0 +1,41 @@
+dist: bionic
+
+language: node_js
+node_js:
+  - '12'
+
+branches:
+  only:
+    - master
+    - develop
+    - /^greenkeeper/.*$/
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+
+services:
+  - xvfb
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - pushd $TRAVIS_BUILD_DIR
+  - npm install
+
+script:
+  - npm run build
+
+notifications:
+  email:
+    recipients:
+      - bennybenester@gmail.com

@@ -1,13 +1,21 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, Entity } from 'typeorm';
+import {
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  Column,
+  Entity,
+  BeforeInsert,
+} from 'typeorm';
 import { TaskStatus } from './tasks.status-enum';
+import * as uid from 'uid';
 
-@Entity()
+@Entity('task', { schema: 'public' })
 export class Task extends BaseEntity {
+  static plural = 'users';
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  uid: string
+  uid: string;
 
   @Column()
   title: string;
@@ -17,4 +25,9 @@ export class Task extends BaseEntity {
 
   @Column()
   status: TaskStatus;
+
+  @BeforeInsert()
+  beforInsertEntityCoreProps() {
+    this.uid = uid(11);
+  }
 }
