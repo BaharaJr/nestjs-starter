@@ -30,9 +30,9 @@ export function getConfiguration() {
   if (!files.temp) {
     files.temp = pathFolder + '/' + 'temp';
   }
-  if (!fs.existsSync(files.temp)) {
-    fs.mkdirSync(files.temp);
-  }
+//   if (!fs.existsSync(files.temp)) {
+//     fs.mkdirSync(files.temp);
+/*}*/
   return {
     ...config,
     ...files,
