@@ -5,9 +5,11 @@ import {
   Column,
   Unique,
   BeforeInsert,
+  OneToMany,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import * as uid from 'uid';
+import { Task } from 'src/tasks/task.entity';
 
 @Entity('user', { schema: 'public' })
 @Unique(['username'])
@@ -32,6 +34,13 @@ export class User extends BaseEntity {
 
   @Column()
   salt: string;
+
+  @OneToMany(
+    type => Task,
+    task => task.user,
+    { eager: true },
+  )
+  task: Task[];
 
   @BeforeInsert()
   beforInsertEntityCoreProps() {

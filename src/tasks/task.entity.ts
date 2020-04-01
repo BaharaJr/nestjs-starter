@@ -4,9 +4,11 @@ import {
   Column,
   Entity,
   BeforeInsert,
+  ManyToOne,
 } from 'typeorm';
 import { TaskStatus } from './tasks.status-enum';
 import * as uid from 'uid';
+import { User } from 'src/auth/user.entity';
 
 @Entity('task', { schema: 'public' })
 export class Task extends BaseEntity {
@@ -25,6 +27,9 @@ export class Task extends BaseEntity {
 
   @Column()
   status: TaskStatus;
+
+  @ManyToOne(type => User, user => user.task)
+  user: User[]
 
   @BeforeInsert()
   beforInsertEntityCoreProps() {
