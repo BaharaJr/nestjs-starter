@@ -24,7 +24,7 @@ export function getDataBaseConfiguration() {
 export function getConfiguration() {
   const files = config.files || {};
   if (!config.port) {
-    config.port = 3000;
+    config.port = parseInt(process.env.PORT) || 4000
   }
 
   if (!files.temp) {
