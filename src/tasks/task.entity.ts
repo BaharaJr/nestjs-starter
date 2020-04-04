@@ -5,6 +5,7 @@ import {
   Entity,
   BeforeInsert,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { TaskStatus } from './tasks.status-enum';
 import * as uid from 'uid';
@@ -28,8 +29,8 @@ export class Task extends BaseEntity {
   @Column()
   status: TaskStatus;
 
-  @ManyToOne(type => User, user => user.task)
-  user: User[]
+  @ManyToOne(type => User, user => user.tasks, {eager: false})
+  user
 
   @BeforeInsert()
   beforInsertEntityCoreProps() {
