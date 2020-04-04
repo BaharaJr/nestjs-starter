@@ -37,10 +37,10 @@ export class User extends BaseEntity {
 
   @OneToMany(
     type => Task,
-    task => task.user,
+    tasks => tasks.user,
     { eager: true },
   )
-  task: Task[];
+  tasks: Task[];
 
   @BeforeInsert()
   beforInsertEntityCoreProps() {
