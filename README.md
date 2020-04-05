@@ -6,6 +6,8 @@
 ## Description
 ```bash
 A nestjs simpler starter project with implemented endpoints so minimalist for anyone to understand
+
+The Project contains tasks added by user and all crud operations on tasks and users
 ```
 > Built with Nestjs, Typeorm and Postgresql
 ## Installation
