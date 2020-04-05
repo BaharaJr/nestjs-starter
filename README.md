@@ -7,7 +7,7 @@
 ```bash
 A nestjs simpler starter project with implemented endpoints so minimalist for anyone to understand
 
-The Project contains tasks added by user and all crud operations on tasks and users
+The Project contains tasks added by user and all crud operations on tasks and users. Session management and JWT will/has also been implemented in the Project.
 ```
 > Built with Nestjs, Typeorm and Postgresql
 ## Installation
