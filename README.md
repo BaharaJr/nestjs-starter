@@ -9,6 +9,10 @@
 
 * The Project contains tasks added by user and all crud operations on tasks and users
 
+* The Project contains tasks added by user and all crud operations on tasks and users.
+
+* Session management and JWT will/has also been implemented in the Project.
+
 * A user can create, update and delete only tasks that belong to them
 ```
 > Built with Nestjs, Typeorm and Postgresql
