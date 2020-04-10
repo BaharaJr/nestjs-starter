@@ -27,18 +27,24 @@ export class TasksController {
   constructor(private taskService: TasksService) {}
   @Get()
   @UseGuards(AuthGuard())
-  async getTasks(@Query(ValidationPipe) tasksFilterDto: TasksFilterDto): Promise<any> {
-   return this.taskService.getAllTasks(tasksFilterDto)
+  async getTasks(
+    @Query(ValidationPipe) tasksFilterDto: TasksFilterDto,
+  ): Promise<any> {
+    return this.taskService.getAllTasks(tasksFilterDto);
   }
 
   @Get('/:id')
-   getTaskById(@Param('id') id: number): Promise<Task> {
+  getTaskById(@Param('id') id: number): Promise<Task> {
     return this.taskService.getTaskById(id);
   }
 
   @Post()
   @UsePipes(ValidationPipe)
-  createTask(@Body() createTaskDto: CreateTaskDto, @GetUser() user: User): Promise<Task> {
+  @UseGuards(AuthGuard())
+  createTask(
+    @Body() createTaskDto: CreateTaskDto,
+    @GetUser() user: User,
+  ): Promise<Task> {
     return this.taskService.createTasks(createTaskDto, user);
   }
 
@@ -48,7 +54,7 @@ export class TasksController {
   }
 
   @Patch('/:id/status')
- async updateTaskStatus(
+  async updateTaskStatus(
     @Param('id') id: number,
     @Body('status', TaskStatusValidation) status: TaskStatus,
   ): Promise<Task> {
