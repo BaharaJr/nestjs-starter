@@ -30,7 +30,10 @@ export class Task extends BaseEntity {
   status: TaskStatus;
 
   @ManyToOne(type => User, user => user.tasks, {eager: false})
-  user
+  user: User[]
+
+  @JoinColumn({name: 'userId'})
+  userId: number;
 
   @BeforeInsert()
   beforInsertEntityCoreProps() {
