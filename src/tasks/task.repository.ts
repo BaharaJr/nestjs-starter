@@ -8,7 +8,7 @@ import { User } from 'src/auth/user.entity';
 
 @EntityRepository(Task)
 export class TaskRepository extends Repository<Task> {
-  async createTask(createTask: CreateTaskDto, user: User): Promise<Task> {
+  async createTask(createTask: CreateTaskDto, user: any): Promise<Task> {
     const { title, description } = createTask;
     const task = new Task();
     // Object.keys(createTask).forEach(key => {
@@ -21,9 +21,9 @@ export class TaskRepository extends Repository<Task> {
     if (user) {
       await task.save();
     } else {
-      throw new BadRequestException('User can never be null')
+      throw new BadRequestException('User can never be null');
     }
-
+    delete task.user;
     return task;
   }
 }
