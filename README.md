@@ -18,7 +18,8 @@
 > Built with Nestjs, Typeorm and Postgresql
 ## Getting Started
 ```bash
-clone the repo: git@github.com:BaharaJr/nestjs-starter.git
+clone the repo: git clone git@github.com:BaharaJr/nestjs-starter.git
+Change Directory into the cloned repo and proceed with Installation
 ```
 
 ## Installation
