@@ -16,6 +16,11 @@
 * A user can create, update and delete only tasks that belong to them
 ```
 > Built with Nestjs, Typeorm and Postgresql
+## Getting Started
+```bash
+clone the repo: git@github.com:BaharaJr/nestjs-starter.git
+```
+
 ## Installation
 
 ```bash
