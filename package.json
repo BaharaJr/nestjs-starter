@@ -32,6 +32,7 @@
     "bcrypt": "^4.0.1",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.11.1",
+    "config": "^3.3.1",
     "eslint-plugin-nestjs": "^1.2.3",
     "helmet": "^3.22.0",
     "nodemon": "^2.0.2",
