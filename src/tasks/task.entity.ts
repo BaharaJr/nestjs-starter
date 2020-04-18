@@ -1,15 +1,14 @@
+import { User } from 'src/auth/user.entity';
 import {
   BaseEntity,
-  PrimaryGeneratedColumn,
+  BeforeInsert,
   Column,
   Entity,
-  BeforeInsert,
   ManyToOne,
-  JoinColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
-import { TaskStatus } from './tasks.status-enum';
 import * as uid from 'uid';
-import { User } from 'src/auth/user.entity';
+import { TaskStatus } from './tasks.status-enum';
 
 @Entity('task', { schema: 'public' })
 export class Task extends BaseEntity {
@@ -29,11 +28,18 @@ export class Task extends BaseEntity {
   @Column()
   status: TaskStatus;
 
-  @ManyToOne(type => User, user => user.tasks, {eager: false})
-  user: User[]
-
-  @JoinColumn({name: 'userId'})
+  @Column()
   userId: number;
+
+  @ManyToOne(
+    type => User,
+    user => user.tasks,
+    { eager: false },
+  )
+  user: User[];
+
+  // @JoinColumn({name: 'userId'})
+  // user: User[];
 
   @BeforeInsert()
   beforInsertEntityCoreProps() {

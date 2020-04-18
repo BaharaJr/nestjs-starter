@@ -1,10 +1,8 @@
-import { Repository, EntityRepository } from 'typeorm';
-import { Task } from './task.entity';
-import { CreateTaskDto } from './dto/create-task.dto';
-import { TaskStatus } from './tasks.status-enum';
-import * as uid from 'uid';
 import { BadRequestException } from '@nestjs/common';
-import { User } from 'src/auth/user.entity';
+import { EntityRepository, Repository } from 'typeorm';
+import { CreateTaskDto } from './dto/create-task.dto';
+import { Task } from './task.entity';
+import { TaskStatus } from './tasks.status-enum';
 
 @EntityRepository(Task)
 export class TaskRepository extends Repository<Task> {
