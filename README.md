@@ -11,7 +11,7 @@
 
 * The Project contains tasks added by user and all crud operations on tasks and users.
 
-* Session management and JWT will/has also been implemented in the Project.
+* Session management and JWT has also been implemented in the Project.
 
 * A user can create, update and delete only tasks that belong to them
 ```
