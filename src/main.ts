@@ -5,11 +5,13 @@ import * as compression from 'compression';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import * as session from 'express-session';
 import * as helmet from 'helmet';
+import {Logger} from '@nestjs/common'
 
 const config = getConfiguration();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const logger = new Logger('bootstrap')
 
   const options = new DocumentBuilder()
     .setTitle('NestJs API with Postgres and Typeorm')
@@ -31,6 +33,6 @@ async function bootstrap() {
 
   app.use(compression());
   await app.listen(config.port);
-  console.log('App Listenig on Port', config.port)
+  Logger.log('App Listenig on Port', config.port)
 }
 bootstrap();
