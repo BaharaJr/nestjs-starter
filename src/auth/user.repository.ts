@@ -14,6 +14,8 @@ export class UserRepository extends Repository<User> {
     user.username = username;
     user.password = await this.hashPassword(password, user.salt);
     user.uid = uid();
+    user.firstname = firstname
+    user.lastname = lastname
 
     try {
       await user.save();
