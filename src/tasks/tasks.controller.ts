@@ -21,9 +21,11 @@ import { Task } from './task.entity';
 import { TasksService } from './tasks.service';
 import { TaskStatusValidation } from './pipes/task-status.validation.pipe';
 import { TaskStatus } from './tasks.status-enum';
+import { Logger } from '@nestjs/common';
 
 @Controller('tasks')
 export class TasksController {
+  private logger = new Logger('TasksController');
   constructor(private taskService: TasksService) {}
   @Get()
   @UseGuards(AuthGuard())
@@ -31,6 +33,11 @@ export class TasksController {
     @Query(ValidationPipe) tasksFilterDto: TasksFilterDto,
     @GetUser() user: User,
   ): Promise<any> {
+    this.logger.verbose(
+      `'${user.username}' retrieving all tasks. Filter: ${JSON.stringify(
+        tasksFilterDto,
+      )}`,
+    );
     return this.taskService.getAllTasks(tasksFilterDto, user);
   }
 

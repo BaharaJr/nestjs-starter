@@ -33,6 +33,6 @@ async function bootstrap() {
 
   app.use(compression());
   await app.listen(config.port);
-  Logger.log('App Listenig on Port', config.port)
+  Logger.log(`App Listenig on Port ${config.port}`)
 }
 bootstrap();
