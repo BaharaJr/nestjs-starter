@@ -14,6 +14,8 @@
 * Session management and JWT has also been implemented in the Project.
 
 * A user can create, update and delete only tasks that belong to them
+
+* Tests will be included for every module
 ```
 > Built with Nestjs, Typeorm and Postgresql
 ## Getting Started
