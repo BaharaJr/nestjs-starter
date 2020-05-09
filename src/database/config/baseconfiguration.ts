@@ -24,15 +24,15 @@ export function getDataBaseConfiguration() {
 export function getConfiguration() {
   const files = config.files || {};
   if (!config.port) {
-    config.port = 3000;
+    config.port = parseInt(process.env.PORT) || 4000
   }
 
   if (!files.temp) {
     files.temp = pathFolder + '/' + 'temp';
   }
-  if (!fs.existsSync(files.temp)) {
-    fs.mkdirSync(files.temp);
-  }
+//   if (!fs.existsSync(files.temp)) {
+//     fs.mkdirSync(files.temp);
+/*}*/
   return {
     ...config,
     ...files,
