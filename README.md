@@ -17,7 +17,7 @@
 
 * Tests will be included for every module
 ```
-> Built with Nestjs, Typeorm and Postgresql
+> Built with Nestjs, Typeorm and Postgresql (Optional GraphQL)
 ## Getting Started
 ```bash
 clone the repo: git clone git@github.com:BaharaJr/nestjs-starter.git
