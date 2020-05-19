@@ -58,7 +58,7 @@ $ npm run test:cov
 ## Branch Descriptions
 > Every branch is simplified to make the learning easier and it's self described
 ```bash
-The master branch contains the most recent or full api(On Completion)
+The master branch contains the most recent or finished API endpoints(On Completion)
 ```
 ## Hall-of-Fame
 [![](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/images/0)](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/links/0)[![](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/images/1)](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/links/1)[![](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/images/2)](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/links/2)[![](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/images/3)](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/links/3)[![](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/images/4)](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/links/4)[![](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/images/5)](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/links/5)[![](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/images/6)](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/links/6)[![](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/images/7)](https://sourcerer.io/fame/BaharaJr/BaharaJr/nestjs-starter/links/7)
