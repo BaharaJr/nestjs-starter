@@ -1,0 +1,6 @@
+on: push
+name: Example Workflow
+jobs:
+  launchDarklyCodeReferences:
+    name: LaunchDarkly Code References
+    runs-on: ubuntu-latest
