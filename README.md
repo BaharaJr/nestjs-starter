@@ -1,7 +1,7 @@
 
 ## Description
 ```bash
-* A nestjs simpler starter project with implemented endpoints so minimalist for anyone to understand
+* A nestjs simpler starter project with implemented endpoints. 
 
 * The Project contains tasks added by user and all crud operations on tasks and users
 
