@@ -18,7 +18,9 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts"
+    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@nestjs/common": "^6.11.11",
@@ -41,7 +43,8 @@
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.0",
     "typeorm": "^0.2.25",
-    "uid": "0.0.2"
+    "uid": "0.0.2",
+    "snyk": "^1.369.2"
   },
   "devDependencies": {
     "@compodoc/compodoc": "^1.1.11",
@@ -87,5 +90,6 @@
     },
     "coverageDirectory": "./coverage",
     "testEnvironment": "node"
-  }
+  },
+  "snyk": true
 }
