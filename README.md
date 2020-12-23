@@ -11,7 +11,6 @@
 
 * A user can create, update and delete only tasks that belong to them
 
-* Tests will be included for every module
 ```
 > Built with Nestjs, Typeorm and Postgresql (Optional GraphQL)
 ## Getting Started
