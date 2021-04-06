@@ -24,12 +24,12 @@
   },
   "dependencies": {
     "@nestjs/common": "^6.11.11",
-    "@nestjs/config": "^0.6.1",
+    "@nestjs/config": "^0.6.3",
     "@nestjs/core": "^6.11.11",
     "@nestjs/jwt": "^7.2.0",
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^6.11.11",
-    "@nestjs/swagger": "^4.7.10",
+    "@nestjs/swagger": "^4.7.12",
     "@nestjs/typeorm": "^6.3.4",
     "bcrypt": "^5.0.0",
     "class-transformer": "^0.3.2",
@@ -44,7 +44,7 @@
     "rxjs": "^6.6.3",
     "typeorm": "^0.2.30",
     "uid": "0.0.2",
-    "snyk": "^1.437.4"
+    "snyk": "^1.439.0"
   },
   "devDependencies": {
     "@compodoc/compodoc": "^1.1.11",
